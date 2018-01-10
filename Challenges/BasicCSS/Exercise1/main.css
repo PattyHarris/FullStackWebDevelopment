@@ -1,0 +1,25 @@
+/* Body has a background color */
+
+body {
+    background: #E7F7D4;
+}
+
+/* Challenge: make h1 red (hex), centered, and a shadow */
+h1 {
+    color: #ff0000;
+    text-shadow: 2px 2px 5px #B8141F;
+    text-align: center
+}
+
+/* Class for h2 */
+.h2Class {
+    color: #7fbd32;
+}
+
+/* ID for h3 with a light background and color and border */
+#h3_ID {
+    background: #f3faeb;
+    color:  #517920;
+    border: 1px solid #B8141F;
+
+}

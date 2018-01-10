@@ -1,0 +1,154 @@
+/* Defaults ---------------------------*/
+header {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+
+/* Add padding to all the column
+   classes.
+ */
+* {
+    box-sizing: border-box;
+
+}
+
+/* Custom Styles ----------------------*/
+#section-1-gradient {
+
+    /* For browsers that do not support gradients */
+    background: #b3e6ff;
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(#b3e6ff, #0099e6);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(#b3e6ff, #0099e6);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(#b3e6ff, #0099e6);
+    /* Standard syntax */
+    background: linear-gradient(#b3e6ff, #0099e6);
+
+}
+
+label.fieldLabel,
+label.resultLabel {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 5px;
+    margin: 5px;
+}
+
+label.resultLabel {
+    margin-top: 20px;
+}
+
+
+h1.formTitle {
+    font-size: 45px;
+    text-align: center;
+}
+
+h2.chooseHeader {
+    font-size: 35px;
+    text-align: center;
+}
+
+div.selectionFields,
+div.numFelds {
+    display: block;
+}
+
+select.selectionList {
+    font-size: 20px;
+    width: 200px;
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #0077b3;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    width: 200px;
+    min-width: 100px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+input[type="submit"] {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #0077b3;
+    border-radius: 7px;
+    padding: 15px 60px;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+/* Rounded corner box with a shadow.
+ */
+div.box {
+    text-align: center;
+    margin: 24px;
+    padding: 36px 24px 40px 24px;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15),
+        0 2px 3px 0 rgba(0,0,0,.1);
+}

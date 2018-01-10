@@ -1,0 +1,79 @@
+body {
+    background-color: #E1F5FE;
+}
+
+/* Used in the classes, id, element tutorial...
+h1 {
+    color: #01579B;
+    text-align: center;
+}
+*/
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #29b6f6;
+    margin: auto;
+}
+
+#circle {
+    color: #FFA726;
+    font-size: 40px;
+
+}
+
+/* Color tutorial - simple background
+.container {
+    background-color: cornflowerblue;
+}
+*/
+
+/* Background tutorial */
+
+body{
+    background-image: url(BackgroundImage.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Color tutorial - gradient */
+
+.container {
+    /* Commented out for the background tutorial
+    background: linear-gradient(to bottom right, #00ccff, #fbe9e7);
+    box-shadow: 3px 5px 3px #0277bd;
+    */
+}
+
+/* Color tutorial - borders */
+
+.imageBorder {
+    border: 2px solid #40798c;
+
+}
+
+/* NOTE: NO comma between the shadow parameters
+   For the tutorial on Grouping, added h3 to the
+   h1 definition.
+*/
+h1, h3 {
+    color: #01579B;
+    text-shadow: 2px 2px 5px #E1F5FE;
+}
+
+h2 {
+    color: rgb(232, 73, 0);
+    text-shadow: 1px 1px 3px #fbe9e7;
+}
+
+/* Combinator tutorial - descendant CSS */
+ul li {
+
+    color: #01579B;
+    font-size: 20px;
+}
+
+/* Child CSS */
+ul > li {
+    color: #E84900;
+}

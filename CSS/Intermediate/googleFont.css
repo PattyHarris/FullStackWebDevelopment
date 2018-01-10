@@ -1,0 +1,99 @@
+/* Google Fonts */
+
+
+body {
+    background-color: #E1F5FE;
+    /*text-align: center;*/
+}
+
+/* Make the image responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+
+    /*opacity: 0.5;*/
+
+    /* Centering
+    display: block;
+    margin: auto;*/
+
+    /* Margins */
+    margin: 60px;
+
+}
+
+.imageBorder {
+/* Commented out for the image tutorial.
+    border: 5px dashed #84B4C2;
+*/
+    /* Shaves 10 px off each corner
+    border-radius: 10px; */
+
+    /* Makes a circle
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;*/
+
+    /* Thumbnail */
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #84B4C2;
+    padding: 5px;
+}
+
+/* For the padding tutorial */
+button {
+    color: white;
+    background: red;
+    border-radius: 12px;
+    border: none;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+h1  {
+    color: #01579B;
+    line-height: 2rem;
+    font-family: 'Macando,serif, sans-serif';
+
+}
+
+h2  {
+    color: #01579B;
+    line-height: 2rem;
+    font-family: 'Open+Sans+Condensed:300',serif, sans-serif;
+}
+
+h3  {
+    color: #01579B;
+    line-height: 2rem;
+    font-family: 'Spirax',serif, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #FC600A;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.formatClass {
+    font-size: 25px;
+    color: #0086b3;
+    line-height: 2em;
+}
+
+/* Combinator tutorial - descendant CSS */
+ul li {
+
+    color: #01579B;
+    font-size: 20px;
+}
+
+/* Child CSS */
+ul > li {
+    color: #E84900;
+}

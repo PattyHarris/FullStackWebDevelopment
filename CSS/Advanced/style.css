@@ -1,0 +1,376 @@
+/* Defaults ---------------------------*/
+nav,
+header,
+footer {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    margin: 0;
+}
+
+label {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+/* Here we override the above font size
+   but inherit the line height.
+ */
+article p {
+    font-size: 35px;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.row::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+
+/* Add padding to all the column
+   classes.
+ */
+* {
+    box-sizing: border-box;
+
+}
+
+/* Navbar -----------------------------*/
+
+nav {
+    width: 100%;
+    margin: 0;
+}
+
+nav ul {
+    background-color: #eee;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+ul.topNav li {
+    list-style: none;
+    float: left;
+}
+
+ul.topNav li.topNavRight {
+    float: right;
+}
+
+ul.topNav li a {
+    display: block;
+    text-decoration: none;
+    min-height: 16px;
+    text-align: center;
+    padding: 14px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* Add a hover action to the anchor */
+ul.topNav li a:hover {
+    background-color: #0080ff;
+    color: #fff;
+}
+
+/* Hide the hamburger menu */
+ul.topNav li.hamburgerMenu {
+    display: none;
+}
+
+/* Custom Styles ----------------------*/
+
+/* See W3School CSS Gradient */
+#section-1-gradient {
+
+    /* For browsers that do not support gradients */
+    background: #b3e6ff;
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(#b3e6ff, #0099e6);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(#b3e6ff, #0099e6);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(#b3e6ff, #0099e6);
+    /* Standard syntax */
+    background: linear-gradient(#b3e6ff, #0099e6);
+
+}
+
+/* Rounded corner box with a shadow.
+ */
+div.box {
+    text-align: center;
+    margin: 24px;
+    padding: 36px 24px 40px 24px;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15),
+        0 2px 3px 0 rgba(0,0,0,.1);
+}
+
+button {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #0069ff;
+    border-radius: 7px;
+    padding: 15px 60px;
+    display: block;
+    text-align: center;
+    margin: 5px;
+}
+
+button.learnMore {
+    display: block;
+    margin: auto;
+}
+
+/* Make sure the devIcon.png icon is always 100%
+*/
+div.icon {
+    width: 100%;
+}
+
+/* For the iOS-Slope.png image.  Note that img
+   is added to specify the child of this div.
+   The shadow moves up and left (-2px for both the
+    horizontal and vertical), with a blur of 10px and
+    a spread of 2px.
+ */
+div.slopeIcon img {
+    display: block;
+    margin: auto;
+    box-shadow: -2px -2px 20px 2px rgba(0, 0, 0, .15),
+        2px 2px 17px 2px rgba(0, 0, 0, 1);
+}
+
+/* Left side column - percent here allows the
+   flex
+*/
+div.leftSideCol {
+    margin-left: 30%;
+}
+
+div.rightSideCol {
+    margin-left: 15%;
+}
+
+h1.large {
+    font-size: 56px;
+    color: #fff;
+    margin: 0;
+    line-height: 70px;
+}
+
+h1.section2Header {
+    font-size: 65px;
+    text-align: center;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    width: 400px;
+    min-width: 100px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+form h2 {
+    color: #fff;
+}
+
+footer.footerClass {
+    background-color: #666;
+    padding-left: 10%;
+}
+
+footer.footerClass h1 {
+    color: #fff;
+    font-size: 35px;
+}
+
+/* Padding set to 0 to shift the list
+   items left */
+footer.footerClass ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+footer.footerClass ul li {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* Mobile -----------------------------
+    Everthing below this applies to mobile - above
+    applies to the desktop.
+*/
+
+/* Media query on screen width.  If the dsplay becomes
+   less than 680 px, hide all the li children except the
+   first child.
+*/
+@media screen and (max-width: 680px) {
+    ul.topNav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+    ul.topNav li.hamburgerMenu {
+        display: block;
+        float: right;
+    }
+
+    /* ----- Responsive Class -----------*/
+
+    /* Make sure the menu is in the upper
+       right.
+    */
+    ul.topNav.responsive li.hamburgerMenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    /* Make the navbar position absolute */
+    ul.topNav.responsive {
+        position: relative;
+    }
+
+    /* Line up the elements in a row and set the
+       float to none to override the parent's float.
+    */
+    ul.topNav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    /* Instead of text-align, we could have used
+       float, but since we're working with text, e.g.
+       the anchor...
+    */
+
+    ul.topNav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
+    h1.section2Header {
+        font-size: 50px;
+    }
+
+    article p {
+        font-size: 25px;
+    }
+
+    .col-7,
+    .col-6,
+    .col-5,
+    .col-4 {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Adjusting the columns in the footer
+       area - just another way of doing this
+       instead of modifying col-3 - recommended
+       method.
+     */
+    div.footerMobileClass {
+        display: block;
+        width: 50%;
+    }
+
+    /* Adjust the box class for mobile.
+    */
+    div.box {
+        padding: 5px;
+        display: block;
+    }
+
+    /* Note that we're adding a margin to the parent,
+       not the img.
+     */
+    div.slopeIcon {
+        margin: 10px;
+    }
+    div.slopeIcon img {
+        width: 100%;
+    }
+
+    div.leftSideCol,
+    div.rightSideCol {
+        margin: 15px;
+    }
+
+    input[type="text"] {
+        width: 350px;
+    }
+
+    .videoContainer iframe {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+}

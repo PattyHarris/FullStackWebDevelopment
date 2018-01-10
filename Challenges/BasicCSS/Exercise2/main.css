@@ -1,0 +1,36 @@
+
+/* The immediate parent items should be red */
+ul li {
+    color: #FE2712;
+}
+
+/* Make all the li descendants green */
+ol > li   {
+    color: #66b032;
+}
+
+/* Set the 2 colors using the specifity point system.
+We need to specifiy the class to distinguish these h2
+headers from other possible div h2 selectors. In this
+example, the class selector isn't really needed. */
+
+/* Points here is 11 */
+div.parent h2 {
+    color: #3190af;
+}
+
+/* Points here is 12 and applies to the div class and the
+h2 tag inside the div.*/
+div.parent div h2 {
+    color: #3a631c;
+}
+
+/* Apply the same color to the given selectors */
+h1, h3, h4, p {
+    color: #347B98;
+}
+
+/* Using specifity, change the h3 selector color - since this comes after the above, it changes to the orange color.*/
+h3 {
+    color: #FC600A;
+}

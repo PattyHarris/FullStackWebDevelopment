@@ -1,0 +1,60 @@
+/* Text styling and formatting */
+
+html {
+    font-family: "Times New Roman", serif, sans-serif;
+
+}
+
+body {
+/*    background-image: url(BackgroundImage.jpeg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+    background-color: #E1F5FE;
+    text-align: center;
+}
+
+
+.imageBorder {
+    border: 2px solid #40798c;
+
+}
+
+h1, h2, h3 {
+    color: #01579B;
+    font-style: normal;
+
+/*    text-shadow: 2px 2px 5px #E1F5FE;*/
+}
+
+h2 {
+    color: #E84900;
+    font-size: 30px;
+    font-style: oblique;
+/*    text-shadow: 1px 1px 3px #fbe9e7;*/
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #FC600A;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.formatClass {
+    font-size: 25px;
+    color: #0086b3;
+    line-height: 2em;
+}
+
+/* Combinator tutorial - descendant CSS */
+ul li {
+
+    color: #01579B;
+    font-size: 20px;
+}
+
+/* Child CSS */
+ul > li {
+    color: #E84900;
+}

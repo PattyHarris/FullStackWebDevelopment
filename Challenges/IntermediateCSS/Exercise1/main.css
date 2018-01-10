@@ -1,0 +1,137 @@
+body {
+    background-color: #eff7ee;
+}
+
+/* Make the image responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+
+    /*opacity: 0.5;*/
+
+    /* Centering
+    display: block;
+    margin: auto;*/
+
+    /* Margins */
+    margin: auto;
+    display: block;
+
+}
+
+.imageBorder {
+
+    /* Thumbnail */
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #172914;
+    padding: 5px;
+}
+
+h1  {
+    color: #eff7ee;
+    text-shadow: 2px 2px 5px #4e8943;
+}
+
+h1, h2, h4, p {
+    text-align: center;
+    font-family: 'Macando,serif, sans-serif';
+}
+
+.gradientClass {
+    background: linear-gradient(to bottom right, #c0ddbb 0%, #172914 100%)
+}
+
+
+/* Rows and columns */
+
+.rowClass {
+    display: flex;
+    width: 100%;
+}
+
+.rowClass::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.colClass-1 {
+    width: 8.33%;
+}
+.colClass-2 {
+    width: 16.66%;
+}
+.colClass-3 {
+    width: 25%;
+}
+.colClass-4 {
+    width: 33.33%;
+}
+.colClass-5 {
+    width: 41.66%;
+}
+.colClass-6 {
+    width: 50%;
+}
+.colClass-7 {
+    width: 58.33%;
+}
+.colClass-8 {
+    width: 66.66%;
+}
+.colClass-9 {
+    width: 75%;
+}
+.colClass-10 {
+    width: 83.33%;
+}
+.colClass-11 {
+    width: 91.66%;
+}
+.colClass-12 {
+    width: 100%;
+}
+
+/* Helps to keep the size correct for each element */
+* {
+    box-sizing: border-box;
+}
+
+/* Used to help with visually seeing what's going on
+  with rows and cols.  The "float" makes it mobile responsive.
+*/
+[class*="colClass-"] {
+    /* Uncomment to see how the columns are set
+    border: 2px solid red;*/
+    padding: 15px;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
