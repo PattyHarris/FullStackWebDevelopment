@@ -86,6 +86,7 @@ Bitbucket has free private repositories....and that's about it.
 > git pull origin master
 </code>
 
+I had to add "--allow-unrelated-histories" to avoid a "history" error.
 
 ### Wprking Through Git Merge Conflicts
 
