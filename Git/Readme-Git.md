@@ -81,6 +81,10 @@ Bitbucket has free private repositories....and that's about it.
 > git remote -v
 </code>
 
+2. To pull the Readme.md file we added to the git remote repository, 
+<code>
+> git pull origin master
+</code>
 
 
 ### Wprking Through Git Merge Conflicts
