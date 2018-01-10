@@ -87,8 +87,24 @@ Bitbucket has free private repositories....and that's about it.
 </code>
 
 I had to add "--allow-unrelated-histories" to avoid a "history" error.
+This is actually, "git pull origin "branch name", but here we're working off of the master branch.
+
+3. To push everything up to remove:
+<code>
+> git push origin master
+</code>
+
+Seems I still to to add a username and password, which means my mac is quite setup yet with the SSH part.
+I added the .ssh/config file - maybe that will fix it..
+
+4. If you don't use the github default Readme.md option, gethub will show the steps for adding your files using the steps we just used above.
+
+5. Noticed that some of my Readme-*.md files have garbage where I attempted to use the "code" tag.
 
 ### Wprking Through Git Merge Conflicts
 
+Nothing really interesting here...
+
 ### Exercise: Pushing to Github
 
+Exercise was to do basically what I did with the Ultimate Web files.
