@@ -81,7 +81,6 @@ Bitbucket has free private repositories....and that's about it.
 > git remote -v
 </code>
 
-2. 
 
 
 ### Wprking Through Git Merge Conflicts
