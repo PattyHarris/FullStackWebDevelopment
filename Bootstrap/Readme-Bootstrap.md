@@ -126,11 +126,54 @@ To see what properties the card has, use the Chrome inspector to check the paddi
 
 #### Forms: Adding the Input Fields
 
+1. First add the Devslopes img (in assests).  Here we're not making the img part of the form group - it will stack on top of the form group.  We added the bootstrap img-fluid class which re-sizes the img nicely inside the card.  Using the Chrome inspector, you can see that the img-fluid class has a max-width of 100% (the image can only take up 100% of the parent, which is the card block) and a height of auto (resizes when the viewport resizes).  
+
+2. We also added a signin-img class to provide some additional features, such as padding.  The padding: 
+    0 2rem 2rem 
+
+means 0 from the top, 2 rem from the left and right, and 2 rem from the bottom.
+
+REM: referes to the root font size - so if you're font is 12, 2REM means that the resulting value is 24.  R here stands for "root" - so root em.
+
+At the end of this tutorial, we set the size of the image to 70% which means that whatever the viewport changes to, the image will only take up 70% of that width.
+
+3. There are 2 buttons and a submit button on the form - so we'll use the form-group class.  Note the form we're building has labels as placeholder text which is not recommended by some Medium UX designers.
+
+4. The image needs to stack ontop of the form group - copy and paste the form-group code underneath the img tag.  
+
+5. We're not using the ID's (since we're not hooking up to JS), but it's a good idea to rename them from the default bootstrap IDs.
+
+6. The form-group has "label" tags which are removed for this tutorial - as stated above, it would be better to use the labels and improve the placeholder text.
+
+7. Change the input types to email and paswword (from text).
+
+8. By inspecting the elements, you can see that the input fields take up 100% of the width - which we don't want - it's too big.  We'll add a class to the form since we want to control the form width, not just individual elements - signin-form. 
+
 #### Buttons: Adding the Signin Button and Labels
 
+1. Any input related elements, such as text boxes, submit buttons, etc. should be part of a form.  We'll add our button to the form.
+
+2. We used just one of the primary buttons from the Component/Button documention.  This adds 2 classes, btn and btn-primary, the latter which, upon inspection basically provides background, border, and font color.  We'll get rid of that class and add a signin-btn class.
+
+3. The signin-btn that we want is bigger and has a different background color.  The width is 100% which is 100% of it's parent which is the signin-form, 350px.
+
+4. To make the button bigger, we just need to add the bootstrap class btn-lg which adds the additional padding we want plus a heavier font.
+
+5. For the checkbox, see the Check Me Out check box in the Components/Form documentation (near the email text box example).  This includes div's for the form-check, form-check-label, and form-check-input.  
+
+6. We needed to add a space before the "Remember me" text - otherwise, the text butts up against the checkbox - seems like there would be a better way, like adding some margin .... we did add a margin-bottom to the button to give some space between the button and any element below it.
+
+7. "Need Help" Anchor tag: add a dead anchor to the "label" tag - the text here also needs a space at the front to add space.
+
+8. The last thing is the anchor tag at the bottom - it's outside the form with a dead link.  See the class create-new-account.  Note the "display: block" which is needed to ensure the text-align has something to align against.
 
 #### Grids: Finishing Mobile Compatibility
 
+1. Changed the col-8 to col-md-8 to indicate that all viewports that are medium and larger will have a col-8 width.  This changes the small viewports to take up the full 12 value - so to make this explicit, we added col-sm-12 to the div.
+
+2. The image is still too big (we resized it initially with CSS).  We initially used 70% - this is reduced to 50% which makes the image a bit fuzzy - the original image is very large so by shrinking it we loose sharpness.  Inspect the image and you'll see that it's now 280x175.  Double-click on the image in Finder and it will bring it up in Preview (on the Mac).  Use the tool to resize it to 280x175.  Use the Tools->Adjust Size menu option.
+
+Now the image is the correct size and the css width element in the signin-img can be removed entirely.
 
 ### Skate or Die Website
 
