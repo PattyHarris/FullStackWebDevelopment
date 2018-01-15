@@ -177,3 +177,64 @@ Now the image is the correct size and the css width element in the signin-img ca
 
 ### Skate or Die Website
 
+NOTE: The downloaded assets don't contain the index.html or main.css, but these can be copied from the prior Login Portal Starter Template.
+
+
+#### Working with Navbars
+
+1. Setup the index.html with the Bootsrtap min versions of the grid, main CSS, and JS files.
+
+2. We want the narbar that has the dropdown link as part of the bar - towards the lower middle of the documentation.
+
+3. In the "nav" element, replace the "navbar-light bg-faded" classes with "navbar-dark bg-dark" classes - replacing the light navbar with a darke navbar.  NOTE: the class names have changed between the alpha and beta release of Bootstrap.
+
+4. Replace the brand text - "Navbar" with "SKATE".  Replace the "Features" text with "Videos".  Replace "Pricing" with "Photos".
+
+5. Dropdown Link: Replace the href with a deadlink (bootstrap alpha - not needed for beta).  Replace "Dropdown link" with "Swag".  Replace the action text with "Pants", "Shirts", and "Apparel".
+
+6. The "Home" has an "item active" class which means that it's highlighted.  It also has a "sr-only" class is a screen reader class - this hides all elements except on screen reader devices.  See the online documentation for more details.
+
+#### Using Carousels
+
+1. Add a div with class = container-fluid around the nav elements - we should have added that first.
+
+2. Add the Jumbotron heading after the nav element.  This has it's own container to help with the resizing of the content.  It includes a background color of light grey, which we'll change.
+
+3. Add the jumbotron class to the main.css and add the text-align of center.  Instead of changing the background color, we need to override it with a background = none - you can't specify a background-color of none.
+
+4. The jumbotron area is really a row with 3 columns - add a row with a col-sm-12 which will hold the jumbotron div which indicates that the jumbotron will take up the entire viewport for small screen sizes?
+
+5. Add another row to hold the carousel - this time with the 3 cols, 2 of which are the empty cols.  We're using the carousel option that just has the prev and next controls.
+
+6. Carousel: Change the ID from "carouselExampleControls" to "mainCarousel".  The first carousel-item has an "active" class which makes it the first slide in the series.  Note that there are 2 href's that use the old ID and need to be changed to the new ID - otherwise the Prev and Next arrows won't work
+
+You should always keep 3 to 5 slides in a carousel.
+
+The img has a d-block class which gives a display=block which keeps the image centered in the carousel.
+
+The alt text is used if the browser can't find your image.
+
+The image source is changed to use the images from the assets folder - they have already been resized for this tutorial.
+
+Note the sr-only option divs.
+
+Bootstrap has caption classes that will allow you to put captions ontop of the images.  See the carousel-caption inside the second carousel-item.  The classes "d-none d-md-block" indicate that the text will show for medium and larger displays, but for mobile, the text will be too small, and therefore will not show (e.g. d-none).
+
+6. Resizing the carousel: Bootstrap doesn't resize the carousel correctly when the viewport is resized.  The images become squished - even though the img has a img-fluid class.
+
+To fix this, you need to add some media queries that resize to 70%, for example, and then down to 50% for mobile - we didn't do this in the tutorial...
+
+7. To break up the web page, the background color for the sectionLight class is set to a light grey color.
+
+#### Nesting Rows and Columns
+
+#### Modals
+
+#### Addimg Images and Buttons
+
+#### Sizing Modals
+
+#### Building the Footer
+
+#### Working with Font Awesome
+
