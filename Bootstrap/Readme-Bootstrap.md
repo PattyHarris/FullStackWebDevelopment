@@ -228,11 +228,47 @@ To fix this, you need to add some media queries that resize to 70%, for example,
 
 #### Nesting Rows and Columns
 
+1. The second section has a 2 rows, where the first row has nested rows and columns.  The middle section of this first row has the nested rows and columns to hold text and images.
+
+2. The col-md-1 offset-md-2 means that we're adding 2 empty columns to the left of the col-md-1, giving us a col of width 3.  This has the effect of a right adjusted image.  The middle column with the text is 6 and the last col is undefined (but will make it 3 since we have 3 + 6 + x = 12).
+
+3. Center content: 2 rows with nested columns.  Pull the lorem ipsum text from www.lipsum.com.
+
+4. Add the button after the sectionDark row.  The button is inside a div to allow us to add additional margins and padding.  Along with the Bootstrap classes, we added a coolStuffBtn along with the coolStuffWrapper classes.  We center the button with display = block and margin = auto.
+
+This button will be used to show a modal dialog.  See next section.
+
 #### Modals
+
+1. To launch the model, added data-toggle and data-target types to the button.
+
+2. Copy and paste the modal code from Bootstrap's online resource to the end of the container div.  Change the id's and their occurrences as needed.
+
+3. The modal's X symbol is created with the "&times;" in the span element.   The "Save" button was removed since we didn't need it.
+
+4. Modal Body - add a container-fluid div. We added a CSS override to center the modal-title, but for me, it's not centered unless I remove the X button.  The margin=auto is centering on the space INCLUDING the X button, so it's not centered.  I posed a question - we'll see...
+
+It seems that the modal-header has a left margin of auto - I added an override and set the margin-left to -1rem.  That seems to fix it.
+
+5. Model Form - copy and paste the simple form-group into a new row div following the image row div.  The form-group is wrapped by a formGroupWrapper to allow us to put some padding around the form group.
+
+Rename the elements and text as needed.
 
 #### Addimg Images and Buttons
 
+1. This works on the 3rd section which has a set of 3 images with a button under each image.
+
+2. To center the image, added an additional class - the display=block and margin=auto is used to ensure centering - this didn't help the modal title issue above.
+
+3. The button in each column takes up the whole col regardless of the parent - which is a col-sm-12 col-lg-
+
+4.  Since the button is a col-sm-12, it will take up the entire width of the column 4.  The button is supposed to have the same width as the image.  By playing around, a width of 54% is about right.  BUT, shrinking the viewport will also shrink the button so that it is no longer the same width as the image.  What you could do, which we didn't do, is do a media query such that the button width would be 100% for a smaller viewport.
+
+5. Stacking the rows with the button allows the image to stack on top of the button when the viewport shrinks.
+
 #### Sizing Modals
+
+1. This section shows how to resize modals and embeds videos as well.
 
 #### Building the Footer
 
