@@ -270,7 +270,54 @@ Rename the elements and text as needed.
 
 1. This section shows how to resize modals and embeds videos as well.
 
+2. Copy the large modal CSS from the documentation and paste under the Cool Stuff Modal - I put this inside the container - Jason didn't....
+
+3. To invoke the modal, add a data-toggle="modal" and a data-target=".kf-modal-lg" - we'll repeat this for the remaining buttons in the bottom of the 3rd section. 
+
+Note that here we're using a data-target=class - Bootstrap allows for an ID or a class in the data-target.
+
+Also note the name - kf-modal-lg - Bootstrap uses the "modal-lg" as an indicator that it's a large modal.
+
+4. You Tube Video: Bootstrap 3 - Utilities->Responsive Helpers.  Bootstrap 4 -> Embed
+
+5. Copy the 16x9 ratio example that includes the YouTube source video.  Replace that video with a video - search YouTube for Jason Brewer IntroClip.  Click on the "Share" button - this works better in Chrome.  You can then easily copy the link - what we really want is just the last part of the link - the whole link is a "share" link which isn't going to work here.
+
+Just replace the part following "embed/..." note that src="" there's no "https".
+
+No styling is added to the text on this modal, but Jason wanted to show that text can be added.
+
+Add the data-toggle and data-target value to the corresponding button.
+
+Repeat this for the other 2 modals...
+
 #### Building the Footer
 
-#### Working with Font Awesome
+1. Footer is added above the modal section.
+
+2. Recall the a contaner-fluid expands the entire viewport whereas the traditional container centers the content with extra margins on the side.
+
+3. To resize images, recall that you can add a temporary class with a size of 50% (for example).  Once you get the percentage right, check the demensions which you then can use in Preview or some other tool to resize the image.
+
+4. Added a footerImg class to add some padding around the image.
+
+#### Working with Font Awesome Favicons
+
+1. Font Awesome icons work like text so you can use text properties, such as text-align.
+
+2. In the Bootstrap documentation, under Migration, the section on Components discusses the elimination of the Glyphicons icon font in Bootstrap 4.  They suggest you use either Octicons or Font Awesome.
+
+3. On the Font Awesome website, you can either download the icon or use the CDN (content delivery network).  Jason prefers the CDN.  The CDN requires your email,which if you don't want to do this, Google w3schools font awesome - this gives you a page that provides the latest Font Awesome CDN...I chose this route.  Note that W3Schools is using version 4.7 - the latest is 5.  There's some deprecated styling too, so for example, the classes use "fab" for brands - this doesn't work in 4.7 - the latter here needs just "fa".
+
+4. From the Font Awesome->Icons, search for the Facebook, etc icons and paste into the col that we set aside for the icons.  We added classes to set the colors as needed.
+
+5. Jason overrode the fa classes to add margin=10px, but it seems to me he could have used the socialWrapper class instead (which is used to center the icons).
+
+6. The socialWrapper has a margin=auto which centers, but I would have thought it would have spread the icons out over the available space?
+
+7. To make the icons clickable, encompass the icon in a anchor tag - see the facebook example.  Note that it's important to use https://facebook.com and not www.facebook.com...
+
+Use target=_blank to open a new tab.
+
+
+
 

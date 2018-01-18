@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="bootstrap-4/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
 
+    <!-- Font Awesome Link from W3School -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="main.css">
 </head>
@@ -138,56 +141,73 @@
 
             </div>
         </div>
-        
+
         <!-- Section 3 -->
         <div class="sectionLight">
             <div class="row">
                 <div class="col-sm-12">
-                    
+
                     <div class="row">
-                        
+
                         <div class="col-sm-12 col-lg-4">
                             <img class="img-fluid imgCenter" src="assets/kickflip.jpg">
-                            
+
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-danger btn-lg btnCenter">Kick Flip</button>
+                                    <button class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".kf-modal-lg">Kick Flip</button>
                                 </div>
                             </div>
                         </div>
-                    
-                    
+
+
                         <div class="col-sm-12 col-lg-4">
                             <img class="img-fluid imgCenter" src="assets/360flip.jpg">
-                            
+
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-danger btn-lg btnCenter">360 Flip</button>
+                                    <button class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".360-modal-md">360 Flip</button>
                                 </div>
                             </div>
                         </div>
-                    
-                    
+
+
                         <div class="col-sm-12 col-lg-4">
                             <img class="img-fluid imgCenter" src="assets/bscrook.jpg">
-                            
+
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-danger btn-lg btnCenter">BS Crook</button>
+                                    <button class="btn btn-danger btn-lg btnCenter" data-toggle="modal" data-target=".bscrook-modal-sm">BS Crook</button>
                                 </div>
                             </div>
                         </div>
-                    
+
                     </div>
-                
-                
+
                 </div>
-            
-            
-            
-            
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="footer bg-dark">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-3">
+                        <img class="img-fluid footerImg" src="assets/KFS_LIGHT.png">
+                    </div>
+                    <div class="col-sm-12 col-lg-9 socialWrapper">
+
+                        <!-- Example for clicking... -->
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                        </a>
+                        <i class="fa fa-google-plus-square fa-3x"></i>
+                        <i class="fa fa-instagram fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
 
         <!-- Modal -->
 
@@ -237,6 +257,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- Kick Flip Modal -->
+        <div class="modal fade kf-modal-lg" tabindex="-1" role="dialog" aria-labelledby="kfModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- https://youtu.be/ilzy0viqVes -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ilzy0viqVes" allowfullscreen></iframe>
+                    </div>
+                    <p>Kick flips are easy. Pop, flick, catch, land. #BOOM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 360 Flip -->
+        <div class="modal fade 360-modal-md" tabindex="-1" role="dialog" aria-labelledby="360ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <!-- https://youtu.be/ilzy0viqVes -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ilzy0viqVes" allowfullscreen></iframe>
+                    </div>
+                    <p>360 flips are easy. Pop, scissor kick, catch, land. #BOOM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BS Crook -->
+        <div class="modal fade bscrook-modal-sm" tabindex="-1" role="dialog" aria-labelledby="bscrookModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- https://youtu.be/ilzy0viqVes -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ilzy0viqVes" allowfullscreen></iframe>
+                    </div>
+                    <p>Backside Crooks are sick. Nollie in nollie out! #BOOM</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Ending Container -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
