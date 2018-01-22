@@ -1,0 +1,79 @@
+// Variables
+$brand-main:    #6600CC
+$brand-sub:     #CC66FF
+$brand-dark:    #333
+$brand-light:   #E6F2FF
+
+// Mixins
+
+// Note that the radius is not compatible across all browsers, and therefore
+// here we're using the webkits.
+=shaping($height, $width, $radius, $background, $color)
+    height: $height
+    width: $width
+    webkit-border-radius: $radius
+    moz-border-radius: $radius
+    ms-border-radius: $radius
+    border-radius: $radius
+    background-color: $background
+    color: $color
+
+// Note: using display and margin to position buttons is not recommended.
+// Done here just as an example - always use grids....see the "hover" at the end here.
+// Jason uses $brand-main, but I think it should be the background color passed in.
+=btn-main($padding, $radius, $background, $color)
+    padding: $padding
+    webkit-border-radius: $radius
+    moz-border-radius: $radius
+    ms-border-radius: $radius
+    border-radius: $radius
+    background-color: $background
+    color: $color
+    border-width: 0
+    border-style: none
+    cursor: pointer
+    display: block
+    margin: auto
+    &:hover
+        background-color:  lighten($background, 20%)
+
+
+// Styles
+body
+    background-color: $brand-light
+h1
+    text-align: center
+    padding-top: 20px
+
+section
+    width: 780px
+    margin: auto
+    padding: 20px
+    background-color: $brand-sub
+    color: $brand-dark
+    border-radius: 7px
+    position: relative
+    z-index: -2
+
+// Margin added to move the text+square over and down
+.thumb1
+    +shaping(120px, 120px, 10%, $brand-dark, $brand-light)
+    margin: 0 175px -90px
+
+// No font color used this time, so we'll just use the same purple
+// color.  The measurements are different than Jason's due to screen
+// resolutions.  This is a circle - radius of 50% which is supposed to be the right of the text...
+.thumb2
+    +shaping(100px, 100px, 50%, $brand-sub, $brand-sub)
+    margin: -40px 1060px
+
+// Note that the first 2 parameters are the padding parameters - no comma -
+// which gives 15 to the top and bottom and 20 to the left and right.
+.btn-1
+    +btn-main(15px 20px, 7px, $brand-main, white)
+
+.btn-2
+    +btn-main(30px, 50%, $brand-dark, white)
+    font-size: 2rem
+    &:hover
+        background-color: darken($brand-main, 10%)
