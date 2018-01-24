@@ -1,0 +1,15 @@
+=border($shadow, $border)
+    // radius: 50px - moved to the border-radius mixin.
+
+    // shadow: 0 0 15px #555
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow
+
+    // border: 1px solid $brand-primary
+    border: $border
+
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    border-radius: $radius

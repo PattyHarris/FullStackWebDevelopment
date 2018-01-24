@@ -73,14 +73,106 @@ In the app.sass file we'll import the *dir.sass files - note that no extension i
 
 6. The *dir.sass files then import the files in their folders, e.g. base-dir.sass imports base.sass
 
-
 ### Sass Partials: Maintainable Styles Rules
+
+1. To further organize the files, create CSS and SASS folders, moving the appropriate files into those folders.
+
+2. Partials are files in sass that begin with "_" and are then not compiled (e.g. _footer.sass)
+
+3. To watch the entire SASS folder, we need to use
+<code>
+> sass --watch SASS:CSS
+</code>
+
+But this creates a massive mess of *.css and *.css.map files.  So rename all the *.sass files to _*.sass.  SASS is smart enough not to need the "_" in the import statements.
 
 ### Sass Variables and Imports: Create a clean scalable stylesheet
 
+1. This section uses the SASSskilz starter project which is annoyingly named - renamed to sassSkills.  Fine.
+
+2. Starting with base defaults -
+    body: add a padding and margin of 0 - some browsers add margins and we want to have our page go edge to edge.
+
+3. In layouts, recall that these need to be IDs.  Here you must start with an ID, but inside that ID, you can add a selector (nested) - see #header.  This is just best practices..... the changes here remove the margin that is automatically added on an h1 tag and then added some padding.  Without setting the margin to 0, you would see a larger white border above the title area.
+
+4. Create a partials file, _variables.sass to hold all the variables.  Unlike CSS, SASS only makes 1 import request (which is an HTTP request) when compiling the imports.  CSS, on the other hand, makes an HTTP request for each import in the file.
+
+6. The sections partial contains a grid of ?
+
+7. box-sizing = border-box means that the border and padding is included in the size calculations of the area.   The display=inline-block allows for setting up the grid so that the cols and rows don't stack ontop of each other when the viewport is resized?  
+
+The styled boxes will stack left to right but will expand the entire width of the viewport.
+
+8. Add a navbar partial to modules.  The main-nav partial uses the hierarchy feature of SASS to setup the elements under the navbar in index.html.  Also, the "&" and ":hover" is used to specify the parent so we can place the hover in that hierarchy as well.  In normal CSS, you would need to specify the latter as "a:hover"
+
 ### Sass Mixins: Save time and recycle styles
 
+1. This section creates the styled boxes using mixins - see the pro-image partial.  
+
+2. Jason indicates that everything in modules needs to be a class BUT we used an ID for the navbar?
+
+3. We started with a pro-img partial that looked like this:
+We started with a class that looked like this:
+<code>
+.pro-img
+    background-color: $brand-primary
+    width: 22%
+    height: 120px
+    display: inline-block
+    float: left
+    margin: 15px
+
+    -webkit-border-radius: 50px
+    -moz-border-radius: 50px
+    border-radius: 50px
+
+    -webkit-box-shadow: 0 0 15px #555
+    -moz-box-shadow: 0 0 15px #555
+    box-shadow: 0 0 15px #555
+
+    border: 1px solid $brand-primary
+</code>
+
+4. We then created a mixins partial (at the root of our SASS folder).  We then moved the border portion to the mixins file with the 2 files now looking like this:
+<code>
+.pro-img
+    +border()
+    background-color: $brand-primary
+    width: 22%
+    height: 120px
+    display: inline-block
+    float: left
+    margin: 15px
+</code>
+
+And
+<code>
+=border()
+    -webkit-border-radius: 50px
+    -moz-border-radius: 50px
+    border-radius: 50px
+
+    -webkit-box-shadow: 0 0 15px #555
+    -moz-box-shadow: 0 0 15px #555
+    box-shadow: 0 0 15px #555
+
+    border: 1px solid $brand-primary
+</code>
+
+5. The border mixin was then extended by providing some input parameters, e.g. border($radius, $shadow, $border)
+You could also just the radius portion and make a mixin just for that - e.g.
+<code>
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    border-radius: $radius
+</code>
+
 ### Sass Extends: Share style properties between other selectors
+
+1. This section extends classes - create a new partial called _extends.sass at the root level of SASS.  Add it to the list of imports in app.sass.  We will create alerts to show how to use class extensions.  To the modules, add a partial called alerts and import it in the modules-dir file.
+
+2. To extend a class, you use @extend + classname, e.g. @extend .alert vv
 
 ### Final Project: Intro to our Landing Page
 
