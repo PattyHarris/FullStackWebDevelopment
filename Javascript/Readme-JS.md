@@ -45,7 +45,7 @@ Nothing special here.
 See HelloJavascript-4...nothing here of note.
 
 === checks both the value and the type -
-e.g. 
+e.g.
 var age = 23;
 var myAge = "23"
 
@@ -55,7 +55,7 @@ if (age === myAge) {
 
 Also, if you have one line of code, {} aren't needed.
 e.g.
-    if (age > 0) 
+    if (age > 0)
         var x = true;
 
 ## JS - Logical Operators
@@ -73,7 +73,7 @@ The function is also not supported in IE 7 or IE 8.
 
 ## JS - Loops
 
-See the function-arrays.js file in the Downloaded 
+See the function-arrays.js file in the Downloaded
 folder as well for the JS that goes with this tutorial and the following couple of tutorials.
 
 Nothing new here...
@@ -102,11 +102,11 @@ Exercise.
     var transaction = function(priceOfSale) {
         // Some code here
     }
-    
+
     // Use the returned variable as a function.
     transacton(10.00);
-    
-    // And then you could push the variable function into 
+
+    // And then you could push the variable function into
     // an array (for example).
     var allTransactions = [];
     allTransactions.push(transaction(12.00),
@@ -146,7 +146,7 @@ Exercise.
 
     // OR Best way - best practice is to capitalize
     // the class name?
-    
+
     function Student(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -155,10 +155,10 @@ Exercise.
             return "Hello, my name is " + this.firstName;
         }
     }
-    
+
     var s1 = new Student("Sally", "Smith");
     s1.greeting();
-    
+
 </code>
 
 3. To enumerate all the keys and values - good for debugging.
@@ -175,20 +175,20 @@ Exercise.
 2. This is the problem:
 <code>
     this.car = "Rabbit";
-    
+
     var myCar = {
         car: "Mini",
         getCar: function() {
             return this.car
         }
     }
-    
+
     var storeGetCarForLater = myCar.getCar;
-    
+
     console.log(storeCarForLater());
-    
-    // Come back later and console prints out Rabbit 
-    
+
+    // Come back later and console prints out Rabbit
+
 </code>
 
 The problem here is that "this.car" refers to the top line of code.  We lost scope.
@@ -197,9 +197,9 @@ To get around this, use bind()
 
 <code>
     var theRealGetCarFunction = storeGetCarForLaer.bind(myCar);
-    
+
     // OR
-    
+
     var anotherGetCarFunction = myCar.getCar.bind(myCar);
 </code>
 
@@ -233,7 +233,7 @@ From Quora:
 
 3. Make sure the fields have data, e.g. !numField1.value
 
-4. You need to explicity convert the text fields to a number - we used parseFloat in case a float is entered.  There are other parsing functions - e.g. parseInt.
+4. You need to explicitly convert the text fields to a number - we used parseFloat in case a float is entered.  There are other parsing functions - e.g. parseInt.
 
 5. NOTE: every time you submit a page, is does a refresh, meaning that if we just tried to put the result in the text field, it will get overwritten.  To prevent this, pass a variable to the "function()" which you can call anything, but it's basically "the event".
 
