@@ -1,0 +1,12 @@
+.card.locationCard {
+    background-color: #FF8A01;
+    display: block;
+}
+
+.card-title.locatonDegreesText {
+    font-size: 2.5rem;
+}
+
+.card-subtitle.locationCityText {
+
+}

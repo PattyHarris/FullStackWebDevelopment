@@ -1,0 +1,17 @@
+/* Changed to fit in the WishList
+.productCard {
+    width: 20rem;
+}
+
+.productCard img {
+    max-height: 15rem;
+}
+*/
+
+.productCard {
+    max-width: 15rem;
+}
+
+.productCard img {
+    max-height: 10rem;
+}

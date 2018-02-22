@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+/*
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+*/
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-main {
+    background-color: #F4F4F4;
+}
+
+.container {
+   
+}
+
+
+/*
+Light Grey: #F5F7FA
+Dark Grey: #484D4D
+Blue: #0196D0
+Pink: #CD59AE
+Orange: #FF8A01
+Purple: #B28AD6
+Red: #FF4826
+Green: #63C254
+*/

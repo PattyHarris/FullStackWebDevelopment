@@ -1,0 +1,15 @@
+
+.card.videoCard {
+    /* This is a hack - the only way to get the rounded corners on
+       the video card...*/
+    background-color: #484D4D;
+}
+
+.card-body.videoCardBottom {
+    height: 70px;
+}
+
+.card-body.videoCardTop {
+    height: 250px;
+}
+
