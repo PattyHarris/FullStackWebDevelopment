@@ -17,8 +17,10 @@ class App extends Component {
     constructor(props) {
         super(props);
         
-        // Initialize the empty array.
-        this.state = {products: []};
+        // Initialize the empty arrays.
+        this.state = { 
+            products: [] 
+        };
         
         // For initial testing...
         // http.getProducts();
@@ -41,24 +43,26 @@ class App extends Component {
             // For testing...
             // console.log(data);
             
-            self.setState( {products: data});
+            self.setState( {products: data} );
             
         }, err => {
+            console.log("Could not retrieve products: " + err);
             
         });
+        
     }
     
     productList = () => {
         const list = this.state.products.map( (product) => 
             product.imgUrl !== "" &&
             <div className="col-sm-4" key={product._id}>
-                <Product title={product.title} price={product.price} imgUrl={product.imgUrl}/>
+                <Product product={product}/>
             </div>
         );
         
         return (list);
     }
-    
+        
     render() {
         return (
             <div className="App">
@@ -76,7 +80,7 @@ class App extends Component {
                             
                         </div>
                         <div className="col-sm-4">
-                            < WishList />
+                            < WishList /> 
                         </div>
                     </div>
                 </div>

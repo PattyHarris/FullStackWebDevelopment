@@ -19,6 +19,7 @@ router.post('/product',
 
 // GET handler 
 router.get('/products', productController.productList);
+router.get('/', productController.productList);
 
 
 // DELETE handler 
