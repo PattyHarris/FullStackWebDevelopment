@@ -16,7 +16,7 @@ var wishListController =
 // POST handler for WishLists
 router.post('/wishlist', wishListController.wishListCreate);
 
-// GET handler 
+// GET handler
 router.get('/wishlists', wishListController.wishListList);
 
 
@@ -25,7 +25,14 @@ router.get('/wishlists', wishListController.wishListList);
 router.put('/wishlist/product/add',
            wishListController.wishListAddProduct);
 
-// DELETE handler - added for convenience...
+// DELETE handler - added for convenience...and also needed
+// for the last exercise.
+// http://localhost:3004/wishlist/product/delete.
+// The body:
+// {
+// 	"productId": "5a7cd851cd6fce05b35fcc7e",
+// 	"wishListId": "5a80a6047ad67012f16f31a0"
+// }
 router.delete('/wishlist/product/delete',
            wishListController.wishListDeleteProduct);
 

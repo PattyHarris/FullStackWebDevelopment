@@ -6,7 +6,7 @@
 export const NOTIF_WISHLIST_CHANGED = "notif_wishlist_changed";
 
 // List of observer objects
-var observers = {};
+var observers = [];
 
 // Singleton class
 let instance = null;
@@ -22,9 +22,10 @@ class NotificationService {
     }
     
     /*
-        Daga has changed - notify the observers.
+        Data has changed - notify the observers.
     */
     postNotification = (notificationName, data) => {
+        console.log("postNotification");
         let observerList = observers[notificationName];
         
         for (var index = 0; index < observerList.length; index ++) {

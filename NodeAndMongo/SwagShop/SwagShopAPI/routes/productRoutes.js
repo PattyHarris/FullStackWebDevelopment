@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded( {extended: false }));
 
-var productController = 
+var productController =
     require('../controllers/productController');
 
 /******************** Products *************************/
@@ -17,8 +17,9 @@ var productController =
 router.post('/product',
             productController.productCreate);
 
-// GET handler 
+// GET handler
 router.get('/products', productController.productList);
+router.get('/', productController.productList);
 
 /******************** Export *************************/
 module.exports = router;

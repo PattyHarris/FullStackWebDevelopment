@@ -16,12 +16,19 @@ var saleItemsController =
 // POST handler for Sale Items - creates the list for the sale items
 router.post('/sale-items', saleItemsController.saleItemsCreate);
 
-// GET handler - returns the list of sale items including related 
+// GET handler - returns the list of sale items including related
 // items
 router.get('/sale-items', saleItemsController.saleItemsList);
 
 // PUT handler - this is really bad REST syntax.
 // Adds a product to the list of sale items.
+// http://localhost:3000/sale-items/product/add
+// Body:
+// {
+// 	"productId": "5a7cd851cd6fce05b35fcc7e",
+// 	"saleItemsId": "5a82209324e5841a37a44202"
+// }
+
 router.put('/sale-items/product/add',
            saleItemsController.saleItemsAddProduct);
 
@@ -30,11 +37,11 @@ router.put('/sale-items/related/add',
            saleItemsController.saleItemsAddRelated);
 
 // DELETE handler - removes an item from the list of sale items.
-router.delete('/sale-items/product/delete', 
+router.delete('/sale-items/product/delete',
               saleItemsController.saleItemsDeleteProduct);
 
 // DELETE handler - removes an item from the list of related items
-router.delete('/sale-items/related/delete', 
+router.delete('/sale-items/related/delete',
               saleItemsController.saleItemsDeleteRelated);
 
 /******************** Export *************************/

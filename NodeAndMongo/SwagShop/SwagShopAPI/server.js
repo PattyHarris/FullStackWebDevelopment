@@ -16,7 +16,6 @@ app.use('/', cartRoutes);
 app.use('/', saleItemsRoutes);
 
 // Start the server
-app.listen(3000, function() {
-    console.log("Swap Shop API running on port 3000...");
+app.listen(3006, function() {
+    console.log("Swap Shop API running on port 3006...");
 });
-

@@ -5,12 +5,14 @@ import './wishlist.css';
 import ProductCondensed from '../product-condensed/product-condensed'
 import NotificationService, {NOTIF_WISHLIST_CHANGED} from '../services/notification-service';
 
+
 // Services
-import HTTPService from '../services/http-service';
+import DataService from '../services/data-service';
 
 // Create/access an instance of the notification service
 let notifService = new NotificationService();
-const http = new HTTPService();
+let dataService = new DataService();
+
 
 class WishList extends Component {
     
@@ -29,61 +31,96 @@ class WishList extends Component {
         
         ]};*/
         
-        this.state = { wishList: [] };
+        this.state = { 
+            wishLists: [],
+            wishList: null
+        };
         
-        // Bind Functions
+        // Bind Functions - recall that you never want to pass a list
+        // down from App.js (according to Mark) - so get the list here
+        // instead of in App.js...
         this.loadData = this.loadData.bind(this);
         this.createWishList = this.createWishList.bind(this);
         this.onWishListChanged = this.onWishListChanged.bind(this);
+ 
+        // console.log('call to loadData');
+        // this.loadData();
     }
     
     loadData = () => {
-        
+       
         // Somehow the promise below messes up "this"...
         // so we need to setup "self".
-        var self = this;
-
-        // Exercise: retrieve the wishlist from the database.
-        http.getWishListProducts().then( data => {
+        console.log("loadData");
+        let self = this;
+        
+        this.setState( {wishList: undefined} );
+        
+        dataService.getWishListItems().then( data => {
             
             // For testing...
-            // console.log(data);
+            console.log("inside getWishListItems promise: " + data);
             
-            self.setState( {wishList: data});
+            self.setState( {wishList: data} );
             
+            console.log("after setState: ", self.state.wishList);
+                        
         }, err => {
-            console.log("Could not retrieve wishlist items: " + err);
+            console.log("Could not retrieve products: " + err);
+            
         });
+                        
+        console.log("End of loadData: ", self.state.wishList);
 
+    }
+        
+    
+    // Create the wish list of products.
+    createWishList = () => {
+        
+        /*
+            The wishlists are in an array of wishlist - each
+            wishlist has a list of products - this was setup in 
+            the prior set of lessons on Node and Mongo.  
+            So we'll use the first one in the is the list..
+        */
+        console.log("createWishList");
+ 
+        if (this.state.wishList != null) {
+            const products = this.state.wishList.products.map( (product) => {
+                /* For debugging..
+                console.log(product);
+                */
+                console.log("Product: ", product);
+                return (
+                    <ProductCondensed product={product} key={product._id} />
+            )});
+            
+            return (products);
+        }
     }
     
     // React lifecycle functions
     componentWillMount() {
         // Pass in the notification name, observer and callback.
+        console.log("componentWillMount");
         notifService.addObserver(NOTIF_WISHLIST_CHANGED, this,
                                  this.onWishListChanged);     
+    }
+
+    componentDidMount() {
+        console.log("componentDidMount");
+        this.loadData();
     }
     
     componentWillUnmount() {
         // Pass in the notification name and observer.
         notifService.removeObserver(NOTIF_WISHLIST_CHANGED, this);   
     }
-    
-    // Lifecycle End
-    
-    
-    // Create the wish list of products.
-    createWishList = () => {
-        
-        const list = this.state.wishList.map( (product) =>
-            <ProductCondensed product={product} key={product._id} />
-        );
-        
-        return list;
-    }
-    
+
     // Callback
     onWishListChanged = (newWishList) => {
+        console.log("onWishListChanged");
         this.setState( {wishList: newWishList} );
     }
     

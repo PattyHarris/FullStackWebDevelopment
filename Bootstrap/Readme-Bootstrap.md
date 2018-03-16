@@ -18,7 +18,7 @@ Downloaded version 4 which is still in Alpha and moved the downloaded files to t
 
 4. The metatage viewport is used by Bootstrap to set the initial device to a mobile state since Bootstrap is "mobile first".
 
-5. Since we downloaded the Bootstrap css, we can remove the link to the maxcdn (content delivery network) - so you end up with just 
+5. Since we downloaded the Bootstrap css, we can remove the link to the maxcdn (content delivery network) - so you end up with just
 <code>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="">
@@ -67,7 +67,7 @@ e.g. [class*="col-"] {}  We also added a transparent border so we can see the co
 
 8. New row with a "large" col size 4 (3 to make 12).
 
-9. We modified these columns to indicate that col sizes for a smaller viewport - e.g. 
+9. We modified these columns to indicate that col sizes for a smaller viewport - e.g.
 <code>
     <div class="row">
         <div class="col-sm-6 col-lg-4">Col 3</div>
@@ -128,12 +128,12 @@ To see what properties the card has, use the Chrome inspector to check the paddi
 
 1. First add the Devslopes img (in assests).  Here we're not making the img part of the form group - it will stack on top of the form group.  We added the bootstrap img-fluid class which re-sizes the img nicely inside the card.  Using the Chrome inspector, you can see that the img-fluid class has a max-width of 100% (the image can only take up 100% of the parent, which is the card block) and a height of auto (resizes when the viewport resizes).  
 
-2. We also added a signin-img class to provide some additional features, such as padding.  The padding: 
-    0 2rem 2rem 
+2. We also added a signin-img class to provide some additional features, such as padding.  The padding:
+    0 2rem 2rem
 
 means 0 from the top, 2 rem from the left and right, and 2 rem from the bottom.
 
-REM: referes to the root font size - so if you're font is 12, 2REM means that the resulting value is 24.  R here stands for "root" - so root em.
+REM: refers to the root font size - so if you're font is 12, 2REM means that the resulting value is 24.  R here stands for "root" - so root em.
 
 At the end of this tutorial, we set the size of the image to 70% which means that whatever the viewport changes to, the image will only take up 70% of that width.
 
@@ -147,7 +147,7 @@ At the end of this tutorial, we set the size of the image to 70% which means tha
 
 7. Change the input types to email and paswword (from text).
 
-8. By inspecting the elements, you can see that the input fields take up 100% of the width - which we don't want - it's too big.  We'll add a class to the form since we want to control the form width, not just individual elements - signin-form. 
+8. By inspecting the elements, you can see that the input fields take up 100% of the width - which we don't want - it's too big.  We'll add a class to the form since we want to control the form width, not just individual elements - signin-form.
 
 #### Buttons: Adding the Signin Button and Labels
 
@@ -272,7 +272,7 @@ Rename the elements and text as needed.
 
 2. Copy the large modal CSS from the documentation and paste under the Cool Stuff Modal - I put this inside the container - Jason didn't....
 
-3. To invoke the modal, add a data-toggle="modal" and a data-target=".kf-modal-lg" - we'll repeat this for the remaining buttons in the bottom of the 3rd section. 
+3. To invoke the modal, add a data-toggle="modal" and a data-target=".kf-modal-lg" - we'll repeat this for the remaining buttons in the bottom of the 3rd section.
 
 Note that here we're using a data-target=class - Bootstrap allows for an ID or a class in the data-target.
 
@@ -317,7 +317,3 @@ Repeat this for the other 2 modals...
 7. To make the icons clickable, encompass the icon in a anchor tag - see the facebook example.  Note that it's important to use https://facebook.com and not www.facebook.com...
 
 Use target=_blank to open a new tab.
-
-
-
-

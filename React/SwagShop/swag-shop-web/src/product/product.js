@@ -41,11 +41,26 @@ class Product extends Component {
 
     onButtonClicked = () => {
         
+        // Modified to use a promise for both addition and removal -
+        // needed when working with the database instead of the local
+        // wishList array - see the code in dataService.
         if (this.state.onWishList) {
-            dataService.removeWishListItem(this.props.product);
+            dataService.removeWishListItem(this.props.product).then(response => {
+                
+                console.log(response);
+                
+            }).catch(e => {
+                console.log(e);
+            });
         } 
         else {
-            dataService.addWishListItem(this.props.product); 
+            dataService.addWishListItem(this.props.product).then(response => {
+                
+                console.log(response);
+                
+            }).catch(e => {
+                console.log(e);
+            });
         }
     }
     
@@ -55,6 +70,8 @@ class Product extends Component {
             onWishList: dataService.itemOnWishList(this.props.product)
         });
     }
+    
+    
     render() {
         
         var btnClass;

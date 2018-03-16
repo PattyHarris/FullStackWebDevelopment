@@ -11,12 +11,12 @@
 > npm install -g npm
 </code>
 
-2. To run the shell, 
+2. To run the shell,
 <code>
 > node
 </code>
 
-3. Mark uses "vim" to edit on the terminal: 
+3. Mark uses "vim" to edit on the terminal:
      - use "i" for insert
      - ESC + ESC to get to the ":"
      - "x" to save and exit
@@ -54,7 +54,7 @@ var rs = require('readline-sync');
 .
 var name = rs.question('What is your name?');
 console.log("Your name is: " + name);
-    
+
 </code>
 
 The prompt and response then appear on the console when you run (assuming I had installed the package):
@@ -72,7 +72,7 @@ The prompt and response then appear on the console when you run (assuming I had 
 
 4. Importing a module also requires that you know what you're importing - meaning you sort of need to know what the code is that you're importing.  
 
-5. To run this test, 
+5. To run this test,
 <code>
 > node app.js
 </code>
@@ -99,7 +99,7 @@ The prompt and response then appear on the console when you run (assuming I had 
 > node install --save express
 </code>
 
-The "--save" option adds a dependency to the package.json file.  What this means that if we remove the install node_modules folde, anyone downloading our API, could run "npm install" and npm would re-install all the dependencies (and therefore re-install express).
+The "--save" option adds a dependency to the package.json file.  What this means that if we remove the install node_modules folder, anyone downloading our API, could run "npm install" and npm would re-install all the dependencies (and therefore re-install express).
 
 The caret next the version means it's the latest version of express.
 
@@ -109,10 +109,10 @@ var express = require("express");
 var app = express();
 </code>
 
-3. Here, the forward slash means anything comming into the base URL - the request comes into the function here and is handled in the closure.
+3. Here, the forward slash means anything coming into the base URL - the request comes into the function here and is handled in the closure.
 <code>
     app.get('./', function(request response) {
-    
+
     })
 </code>
 
@@ -176,7 +176,7 @@ DELETE: /ingredient
 
 4. Instead of CTRL+C the server each time a change is made, install "nodemon" globally.  Then run nodemon instead of node.
 
-5. The ":" in the PUT API, e.g. "/ingredient/:ingredientID", indicates that the ID is a URL parameter. 
+5. The ":" in the PUT API, e.g. "/ingredient/:ingredientID", indicates that the ID is a URL parameter.
 
 6. In postman, the URL then becomes:
 <code>
@@ -214,9 +214,9 @@ https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-os-x/
 
 This assumes the --openssl option
 
-The following is output to the terminal: 
+The following is output to the terminal:
 
-"A CA file has been bootstrapped using certificates from the SystemRoots keychain. To add additional certificates (e.g. the certificates added inbthe System keychain), place .pem files in
+"A CA file has been bootstrapped using certificates from the SystemRoots keychain. To add additional certificates (e.g. the certificates added in the System keychain), place .pem files in
   /usr/local/etc/openssl/certs
 
 and run
@@ -278,13 +278,13 @@ Or, use the pretty() function - e.g. db.products.find().pretty()
 
 ### Searching for Documents
 
-1. To search by ID:
-<code>
-> db.products.find({"_id":ObjectId("5a77d1c3f29d3b3d3c382209)})
+1. To search by ID - something in the code below causes atom.io to comment out the rest of this readme...using the apostrophe's instead of the "code" tag..
 
+```
+> db.products.find({"_id":ObjectId("5a77d1c3f29d3b3d3c382209")})
 { "_id" : ObjectId("5a77d1c3f29d3b3d3c382209"), "productName" : "Blue Car", "price" : 10.44 }
 
-</code>
+```
 
 2. To find a document using some other attribute is the same, e.g.
 <code>
@@ -310,7 +310,7 @@ There's also other types of operators - such as $lt or $gt...
 > db.products.remove({"productName":"Pink Car"})
 </code>
 
-2. To remove just one from a criteria, 
+2. To remove just one from a criteria,
 <code>
 > db.products.remove({"productName":"Pink Car"}, {justOne: true})
 </code>
@@ -383,7 +383,7 @@ To start the modeling process, create a folder called "model".
 module.exports = mongoose.model('Product', product);
 </code>
 
-4. Setup the wish list schema - create a file wishlist.js and add the mongoose and schema setup.  This schema needed one additional item - this is the automatic ID for the object ??
+4. Setup the wishlist schema - create a file wishlist.js and add the mongoose and schema setup.  This schema needed one additional item - this is the automatic ID for the object.
 <code>
 var objectId = mongoose.Schema.Types.ObjectId;
 </code>
@@ -409,7 +409,7 @@ You can also specify "required" as an option.
 2. When you call save, the function enclosure returns the saved object:
 <code>
     product.save(function(err, savedProduct) {
-    
+
     })
 </code>
 
@@ -434,7 +434,7 @@ This didn't work initially - I was missing the "db connect" line in server.js.
 1. Mark did the find this way - no call to exec()
 <code>
     Product.find({}, function(err, products) {
-        
+
         if (err) {
             response.status(500).send({error: "Could not fetch products!"})
         }
@@ -442,16 +442,16 @@ This didn't work initially - I was missing the "db connect" line in server.js.
             console.log(products)
             response.status(200).send(products);
         }
-        
+
     });
-    
+
 </code>
 
 2. The call to "find" is asychronous, which means this generally will fail:
 <code>
     var myProds:
     Product.find({}, function(err, products) {
-        
+
         myProds = products;
         if (err) {
             response.status(500).send({error: "Could not fetch products!"})
@@ -460,14 +460,14 @@ This didn't work initially - I was missing the "db connect" line in server.js.
             // console.log(products)
             // response.status(200).send(products);
         }
-        
+
     });
-    
-    // Do something with myProds, thinking it has the 
+
+    // Do something with myProds, thinking it has the
     // value of products.
     console.log(myProds);
     response.status(200).send(myProds);
-    
+
 </code>
 
 

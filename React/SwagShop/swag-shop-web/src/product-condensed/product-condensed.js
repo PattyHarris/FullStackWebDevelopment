@@ -14,6 +14,9 @@ class ProductCondensed extends Component {
         
         // Bind functions
         this.removeProduct = this.removeProduct.bind(this);
+        
+        // Debugging.....
+        // console.log("Title: " + this.props.product.title);
     }
     
     removeProduct = () => {

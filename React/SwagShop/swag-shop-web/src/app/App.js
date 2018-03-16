@@ -19,7 +19,7 @@ class App extends Component {
         
         // Initialize the empty arrays.
         this.state = { 
-            products: [] 
+            products: []
         };
         
         // For initial testing...
@@ -62,7 +62,7 @@ class App extends Component {
         
         return (list);
     }
-        
+            
     render() {
         return (
             <div className="App">
