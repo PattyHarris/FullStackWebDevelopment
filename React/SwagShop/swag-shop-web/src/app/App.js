@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // Components
 import Product from '../product/product';
 import WishList from '../wishlist/wishlist';
+import Navigation from '../navigation/navigation';
 
 // Services
 import HTTPService from '../services/http-service';
@@ -65,12 +65,16 @@ class App extends Component {
             
     render() {
         return (
+            
             <div className="App">
+                <div><Navigation /></div>
+                
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to the Swag Shop</h1>
                 </header>
+               
                 <div className="container App-main">
+
                     <div className="row">
                         <div className="col-sm-8">
                             
@@ -82,7 +86,9 @@ class App extends Component {
                         <div className="col-sm-4">
                             < WishList /> 
                         </div>
+                        
                     </div>
+
                 </div>
             </div>
         );

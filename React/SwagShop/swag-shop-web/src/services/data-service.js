@@ -38,6 +38,12 @@ class DataService {
         return instance;
     }
     
+    // Is there a wishlist?
+    haveWishList = () => {
+        return this.wishList == null;
+    }
+    
+    
     // Checks if the item is the wishlist - for changing the
     // state of the button - in the tutorial, wishList was an array.
     // When getting the data from the database, the wishList is an object,

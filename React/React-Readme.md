@@ -441,3 +441,36 @@ Code to iterate them - the outter array is not in the code since the array of pr
 12. The render wasn't getting called automatically when the the wishlist was updated - the original check used a static array wishList from the tutorial, whereas here the wishList is an object with a products array.
 
 13. The initial render where there's an item on the wishList (from the database) failed to render until I add a postNotification after the wishList is successfully setup from the database.
+
+14. Bootstrap 4 is not compatible with React - DOM vs virtual DOM.  I should be using ReactStrap, but it would be lots of changes, which isn't useful at the moment.  I found this which might be enough to finish things up: https://m.pardel.net/react-and-bootstrap-4-part-1-setup-navigation-d4767e2ed9f0
+
+To use this sample, I need to use Bootstrap 4 (I was using the Alpha).
+
+15. Start by cleaning up - removing the React image and it's reference.
+
+16. Add the navigation bar - basically, we add the navigation bar as a component.  Pretty cool.
+
+17. The entries in the NavBar are abstracted into a component.  These next components are "functional components" -  see this:
+https://reactjs.org/tutorial/tutorial.html#functional-components
+
+18. Setting up the links is a bit confusing, but see the tutorial to see if it makes sense.  If the "link" is the current link, the word "(current)" is shown - that's the "extra" content...
+
+19. Added a disabled check for the NavItem as well as another className...
+
+
+20. Replace the Home, Link, and Disabled li tag items with the NavItem class - for example, here's the old and NavItem version of the Home li element - in the tutorial, the href's for the link and disabled li tags were modified to use "page1" and "page2" instead of just a "/" - which are hacks since if all the paths are "/", the nav-link disabled doesn't have any effect.
+<code>
+
+<li className="nav-item active">
+    <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+</li>
+
+<!-- Becomes -->
+
+<NavItem path="/" name="Home" />
+    
+</code>
+
+21. Lasty, add the dropdown component class.  This is a component and not a functional component since it has state. The NavItem could be a component, since it's state would be "current" or "not current".
+
+22. 

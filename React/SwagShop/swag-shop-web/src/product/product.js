@@ -44,6 +44,9 @@ class Product extends Component {
         // Modified to use a promise for both addition and removal -
         // needed when working with the database instead of the local
         // wishList array - see the code in dataService.
+        if (dataService.haveWishList === false) {
+            
+        }
         if (this.state.onWishList) {
             dataService.removeWishListItem(this.props.product).then(response => {
                 
@@ -92,7 +95,7 @@ class Product extends Component {
                 <div className="card-block">
                     <h4 className="card-title">{this.props.product.title}</h4>
                     <p className="card-text">Price: ${this.props.product.price}</p>
-                    <a href="#" onClick={ () => this.onButtonClicked() } className={ btnClass }>{this.state.onWishList ? "Remove from Cart" : "Add to Cart"}</a>
+                    <a href="/" onClick={ () => this.onButtonClicked() } className={ btnClass }>{this.state.onWishList ? "Remove from Cart" : "Add to Cart"}</a>
                 </div>
 
             </div>
