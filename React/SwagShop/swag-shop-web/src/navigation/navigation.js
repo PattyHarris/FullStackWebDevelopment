@@ -13,7 +13,7 @@ const NavItem = (props) => {
     const aClassName = props.disabled ? "nav-link disabled" : "nav-link";
     
     return (
-        <li className={liClassName}><NavLink to={props.path} className={aClassName}>{props.name}</NavLink></li>
+        <li className={liClassName}><NavLink exact activeClassName="current" to={props.path} className={aClassName} >{props.name}</NavLink></li>
 
 // ...... Original Bootstrap code ....
 //        <li className={liClassName}>
