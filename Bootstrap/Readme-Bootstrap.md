@@ -190,7 +190,7 @@ NOTE: The downloaded assets don't contain the index.html or main.css, but these 
 
 4. Replace the brand text - "Navbar" with "SKATE".  Replace the "Features" text with "Videos".  Replace "Pricing" with "Photos".
 
-5. Dropdown Link: Replace the href with a deadlink (bootstrap alpha - not needed for beta).  Replace "Dropdown link" with "Swag".  Replace the action text with "Pants", "Shirts", and "Apparel".
+5. Dropdown Link: Replace the href with a dead link (bootstrap alpha - not needed for beta).  Replace "Dropdown link" with "Swag".  Replace the action text with "Pants", "Shirts", and "Apparel".
 
 6. The "Home" has an "item active" class which means that it's highlighted.  It also has a "sr-only" class is a screen reader class - this hides all elements except on screen reader devices.  See the online documentation for more details.
 
@@ -274,7 +274,7 @@ Rename the elements and text as needed.
 
 3. To invoke the modal, add a data-toggle="modal" and a data-target=".kf-modal-lg" - we'll repeat this for the remaining buttons in the bottom of the 3rd section.
 
-Note that here we're using a data-target=class - Bootstrap allows for an ID or a class in the data-target.
+Note that here we're using a data-target=class - Bootstrap allows for an ID or a class in the data-target.   Either way, the data-target class or ID must exist.
 
 Also note the name - kf-modal-lg - Bootstrap uses the "modal-lg" as an indicator that it's a large modal.
 

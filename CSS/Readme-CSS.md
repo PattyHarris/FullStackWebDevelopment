@@ -18,8 +18,8 @@ such as mediumpurple) - note that the "style" tag goes in the "head" tag area:
                 }
             </style>   
     </code>
-    
-And the h1 line becomes this: 
+
+And the h1 line becomes this:
     <code>
         <h1>In this case, use the internal style.</h1>
     </code>
@@ -50,8 +50,8 @@ Again, this method isn't recommended for large projects.
 1. Different ways to designate colors:
     - color name (from a known list of names)
     - hex value
-    - rgb value - note that Sketch will give this to you in the correct format 
-    
+    - rgb value - note that Sketch will give this to you in the correct format
+
 2. For a discussion on gradients, see https://www.w3schools.com/css/css3_gradients.asp
 
 3. Not all browsers support gradients.  There's an example set of backgrounds that includes a default color for browsers which don't support gradients as well as the special prefix needed for some browsers.
@@ -88,7 +88,7 @@ which is 790x592 - use "Save As" to save the image to your project (instead of u
 Added 2 background properties to the "body" tag:
     - background-repeat
     - background-size
-    
+
 The background-size property only works with images.
 
 You should use an image in reality with the appropriate dimensions or resize the image so that it sizes properly in high definition - otherwise, it will be blurry (like the image is now)
@@ -137,7 +137,7 @@ Using the given index.html, add some colors and backgrounds according to the cla
 ## CSS - Combinators using Descendant and Child Selectors
 
 1. This tutorial is about child elements.  
-Move the "img div" to the "container div" - e.g. 
+Move the "img div" to the "container div" - e.g.
 <code>
       <div class="container">
           <h1>This is inside the container class</h1>
@@ -171,7 +171,7 @@ Also added a un-ordered list with a ordered list as a child element.
 
 2. There's a rating to the selectors in this order:
 
-style->id->class, psuedo class, attribute->element 
+style->id->class, psuedo class, attribute->element
 
 If the element appears in multiple declarations, the one that appears last in the CSS file wins.
 
@@ -205,7 +205,7 @@ If you had an h1 inside a div, any properties in the above would apply to that h
     html, h1 {
         color: green;
     }
-    
+
     body, h1 {
         color: white;
     }
@@ -218,13 +218,13 @@ The h1 color would be white since the value of the each is 2.  The hierarchy doe
     .container, h1 {
         color: green;
     }
-    
+
     div, h1 {
         color: white;
     }
 </code>
 
-5. Another example is shown in the attached image - shows show to determine the specifity when using a attribute, e.g. 
+5. Another example is shown in the attached image - shows show to determine the specifity when using a attribute, e.g.
 <code>
     #foo {
         color: green;
@@ -246,7 +246,7 @@ code>
         <h1 style="color: yellow">
             This would be yellow.
         </h1>
-    </div> 
+    </div>
 </code>
 
 CSS File:
@@ -403,7 +403,7 @@ NOTE: this sections uses googleFonts.css instead of main.css - that way I can ke
 
 ### Centering Images
 
-1. Currently, the image is centered beacuse we have 
+1. Currently, the image is centered beacuse we have
 <code>
 body {
     background-color: #E1F5FE;
@@ -412,7 +412,7 @@ body {
 </code>
 
 2. If you remove the above "text-align" property, you'll see that the "div" selector block property extends the viewport.
-By adding the same "div" property of 
+By adding the same "div" property of
 <code>
     display: block;
 </code>
@@ -559,7 +559,7 @@ Margin and padding are 0 to make sure the content is edge to edge and doesn't in
         list-style: none;
         float: left;
     }
-    
+
     ul.topNave li.topNavRight {
         float: right;
     }
@@ -625,7 +625,7 @@ This uses a "not selector" as well to enable everything to be hidden except the 
 5. To make this all work, add "onclick" to the hamburgerMenu anchor.  The JS is added the "script" element:
 <code>
     <li class="hamburgerMenu"><a href="" onclick="dropdownMenuClicked()">&#9776;</a></li>   
-    
+
     <script>
         function dropdownMenuClicked() {
         }
@@ -666,15 +666,15 @@ The "responsive" class is then available in @media.
 The rows have "flex" property which allows for additional properties, one being "flex-wrap: wrap" which tells the browser to wrap the elements if the display shrinks.  The other property that works in conjunction with "flex" is "align-items: center".
 
 6. The h1 tags are within their own "<div>" so that if in the future you want to add a special style to them, it's already setup to do that.
-    
+
 7. The "large" class makes the "h1" selector a bit larger.  We also reduced the margin to 0 and then added "line-height".  When working with text, use "line-height" to add space instead of "margin".  
-    
+
 ### Attribute Selector
 
 1. For the input selectors, we can specify the type of input with the following - this adds an style to the input selectors with a type of "text":
 <code>
     input[type="text"] {
-    
+
     }
 </code>
 
@@ -734,8 +734,8 @@ Headers cannot be nested inside footer, address, or other header tags.
 2. Since the header is a container, it has a display of "block" which makes it easy to move the text within it.  
 Add a "text-align: center" to center the text.
 
-3. Next up, add a "container" that will hold 3 columns - this 
-container will sit under the header.  Each column contains a 
+3. Next up, add a "container" that will hold 3 columns - this
+container will sit under the header.  Each column contains a
 rounded corner border (box), icon, header text, and supplemental text.
 
 4. Add the box as a class with the following properties:
@@ -756,9 +756,9 @@ On this page, you can see all the properties that are used above.
     - rgba(0,0,0,.15) - the first 3 0's are the color and
     the last value is the opacity (or transparency)
     So the 0's here set the shadow color, background color, and box color to "off" - essentially turning off these
-    attributes.  The last item is the opacity which is 
+    attributes.  The last item is the opacity which is
     set to .15
-    
+
 And then he added another set of this same data - that
 doesn't make sense - so now the box-shadow is
 <code>
@@ -803,7 +803,7 @@ This section of the webpage is just some text with a image to the right.
 
 1. First add the dividing line with the "hr" tag.
 
-2. Add the container class div.  Iniitially we neglected to put in the row div which is necessary for the columns to size properly.
+2. Add the container class div.  Initially we neglected to put in the row div which is necessary for the columns to size properly.
 
 3. Add a col-7 which contains a "article" tag - this is available in HTML 5 and is used for things like blog posts, news article, or comment.  The paragraph (p) tag is added since it includes top and bottom margins.  Still needed to make the font larger and add some padding around the text - see the "article p" class in styles.css
 
@@ -816,7 +816,7 @@ This section of the webpage is just some text with a image to the right.
         0: background
         0: box
         .15: opacity
-        
+
 The second rgba is a second shadow that added.
 
 7. Adjust for mobile by adding the col-7 and col-5 to the mobile area along with the other col classes there.  Also added changes for the font-size of the article p tag.  The image was overflowing, so we needed a div.slopeIcon img selector to set the width to 100%.  To add some space, we needed to add a margin to the parent div (e.g. slopeIcon class), not the img itself.  Otherwise, the image would take up more space than the column.
@@ -840,5 +840,3 @@ The footer is the last section of the web page.  The "footer" tag is new to HTML
 1. This time, instead of modifying the col-3 class (as we did with some other col-* classes), we'll add another "div" class - mobileStack --> footerMobileClass (my name for the class). We set this class with a width of 50% so that columns stack on each other.
 
 2. Adding a class to the div is the recommended method since you may want to use the col-* class elsewhere.  You may not want the col-* class to have a width of 100% or 50% in all cases.
-
-

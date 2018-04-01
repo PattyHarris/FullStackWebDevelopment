@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './navigation.css';
 
+import { NavLink, Switch, Route } from 'react-router-dom';
+
 /* 
     Functional component for the navigation item.
  */
@@ -11,18 +13,20 @@ const NavItem = (props) => {
     const aClassName = props.disabled ? "nav-link disabled" : "nav-link";
     
     return (
-        <li className={liClassName}>
-            <a href={props.path} className={aClassName}>
-                
-                {props.name}
-                
-                {/* Show the (current) if the link is the current link....*/}
-                { (props.path === pageURI) ? (<span className="sr-only">(current)</span>) : '' }
-            </a>
-        </li>
+        <li className={liClassName}><NavLink to={props.path} className={aClassName}>{props.name}</NavLink></li>
+
+// ...... Original Bootstrap code ....
+//        <li className={liClassName}>
+//            <a href={props.path} className={aClassName}>
+//                
+//                {props.name}
+//                
+//                {/* Show the (current) if the link is the current link....*/}
+//                { (props.path === pageURI) ? (<span className="sr-only">(current)</span>) : '' }
+//            </a>
+//        </li>
     
     )
-    
 }
 
 
@@ -72,8 +76,8 @@ class Navigation extends Component {
     
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="/">Navbar</a>
+            <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
+                <a className="navbar-brand" href="/">Swag Shop</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -83,17 +87,18 @@ class Navigation extends Component {
                         
                         {/* The disabled state logic doesn't work if the paths are the same -
                             if paths are all / then the the disabled class doesn't work...
+                            Also, to move the nav items to the right, we'd remove the Search stuff and change the mr-auto above to ml-auto.
                         */}
                         <NavItem path="/" name="Home" />
-                        <NavItem path="/page2" name="Link" />
-                        <NavItem path="/page3" name="Disabled" disabled="true" />
+                        <NavItem path="/wishlists" name="Wishlists" />
+                        <NavItem path="/products" name="Products" disabled="true" />
                         
                         {/**/}
-                        <NavDropdown name="Dropdown">
-                            <a className="dropdown-item" href="/">Action</a>
-                            <a className="dropdown-item" href="/">Another Action</a>
+                        <NavDropdown name="Swag">
+                            <a className="dropdown-item" href="/">Toys</a>
+                            <a className="dropdown-item" href="/">Garden</a>
                             <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="/">Some other action here</a>
+                            <a className="dropdown-item" href="/">Food</a>
                         </NavDropdown>
                         {/**/}
                         

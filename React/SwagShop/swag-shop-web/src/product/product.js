@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import NumberFormat from 'react-number-format';
+
 import './product.css';
 
 // Components
@@ -80,10 +82,10 @@ class Product extends Component {
         var btnClass;
 
         if (this.state.onWishList ) {
-            btnClass = "btn btn-danger";
+            btnClass = "btn btn-danger btnCenter";
         }
         else {
-            btnClass = "btn btn-primary";
+            btnClass = "btn btn-primary btnCenter";
         }
 
         return (
@@ -94,7 +96,11 @@ class Product extends Component {
 
                 <div className="card-block">
                     <h4 className="card-title">{this.props.product.title}</h4>
-                    <p className="card-text">Price: ${this.props.product.price}</p>
+                    
+                    <p className="card-text">
+                        Price: <NumberFormat value={this.props.product.price} displayType={'text'} decimalScale={2} fixedDecimalScale={true} thousandSeparator={true} prefix={'$'} />
+                    </p>
+                                        
                     <a href="/" onClick={ () => this.onButtonClicked() } className={ btnClass }>{this.state.onWishList ? "Remove from Cart" : "Add to Cart"}</a>
                 </div>
 

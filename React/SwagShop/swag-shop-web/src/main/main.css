@@ -1,28 +1,28 @@
-.App {
+.Main {
   text-align: center;
 }
 
 /* Not needed - removed for last exercise..
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.Main-logo {
+  animation: Main-logo-spin infinite 20s linear;
   height: 80px;
 }
 */
 
-.App-header {
+.Main-header {
   height: 120px;
   padding: 20px;
 }
 
-.App-title {
+.Main-title {
     font-size: 1.5em;
 }
 
-.App-intro {
+.Main-intro {
     font-size: large;
 }
 
-.App-main {
+.Main-main {
     padding-top: 25px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 /* Not needed - removed for last exercise..
-@keyframes App-logo-spin {
+@keyframes Main-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }

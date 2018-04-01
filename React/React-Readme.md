@@ -473,4 +473,41 @@ https://reactjs.org/tutorial/tutorial.html#functional-components
 
 21. Lasty, add the dropdown component class.  This is a component and not a functional component since it has state. The NavItem could be a component, since it's state would be "current" or "not current".
 
-22. 
+22. Some tidying - fixed the headings, changed the background colors as with the Skate tutorial, and fixed the resizing on the images.  If you set the width to 100% and height to auto, the aspect ratio is maintained for images.
+
+23. Installed a number formatter package to format the currency correctly.  Note that in the future, considerations for internationlization is important - also hard to get easily for all platforms.  The "Int" package, for example, which is used by some packages, doesn't work on Android....
+
+Note too that "Price: " needs to be on the same line as the NumberFormat component call to ensure the space after the colon.
+
+#### React Router 4
+
+The following is to attempt navigation to a WishLists tab where the user can create and manage wishlists.  This is not an ideal UI/UX but is a start to use the Router APIs.
+
+1. First install react-router-dom - here, I'm followning the steps from a couple of simple online resources.  
+
+2. Next add the import for the BrowerRouter to index.js.  Addtionally, change the render here to use the Router:
+<code>
+ReactDOM.render( (
+    
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+
+    ), document.getElementById('root')
+);
+
+</code>
+
+3. I moved stuff around - App now has just the Navigation and Main components.  Main now contains all the rendering code that was in the App.  This is a better separation - the goal is to put the route declarations in - TBD.
+
+4. FINALLY: Found a blog that says where to put the routes and had an example that made more sense that the rest - see https://blog.logrocket.com/react-router-dom-set-up-essential-components-parameterized-routes-505dc93642f1
+
+Now, if you click on the menu items, the menu stays the same, but the page refresh.  At this point it's an easy bunch of changes to create a new wishlist (button on the home page which could switch to the wishlists page) and then set the default wishlist or something.  Anyway, enough!!!!
+
+4. To get started up again in the terminal, setup 3 tabs:
+> React/SwagShop/swag-shop-web > npm start
+> React/SwagShop/SwagShopAPI > mongod
+> React/SwagShop/SwagShopAPI > nodemon server.js
+
+Use a 4th tab for mucking around in the database and installing packages.  
+

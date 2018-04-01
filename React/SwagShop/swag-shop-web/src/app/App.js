@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import {
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
+
 import './App.css';
 
 // Components
-import Product from '../product/product';
-import WishList from '../wishlist/wishlist';
+
+import Products from '../products/products';
+import WishLists from '../wishlists/wishlists';
 import Navigation from '../navigation/navigation';
+import Main from '../main/main';
 
 // Services
 import HTTPService from '../services/http-service';
@@ -12,67 +20,20 @@ import HTTPService from '../services/http-service';
 const http = new HTTPService();
 
 class App extends Component {
-    
-    // Called when the component loads.
-    constructor(props) {
-        super(props);
-        
-        // Initialize the empty arrays.
-        this.state = { 
-            products: []
-        };
-        
-        // For initial testing...
-        // http.getProducts();
-        
-        // Need to look this up for more details...
-        this.loadData = this.loadData.bind(this);
-        this.productList = this.productList.bind(this);
-        
-        this.loadData();
-    }
-    
-    loadData = () => {
-        
-        // Somehow the promise below messes up "this"...
-        // so we need to setup "self".
-        var self = this;
-        
-        http.getProducts().then( data => {
-            
-            // For testing...
-            // console.log(data);
-            
-            self.setState( {products: data} );
-            
-        }, err => {
-            console.log("Could not retrieve products: " + err);
-            
-        });
-        
-    }
-    
-    productList = () => {
-        const list = this.state.products.map( (product) => 
-            product.imgUrl !== "" &&
-            <div className="col-sm-4" key={product._id}>
-                <Product product={product}/>
-            </div>
-        );
-        
-        return (list);
-    }
-            
+                
     render() {
         return (
             
             <div className="App">
                 <div><Navigation /></div>
                 
-                <header className="App-header">
+                <header className="App-header sectionLight">
                     <h1 className="App-title">Welcome to the Swag Shop</h1>
-                </header>
+                </header>          
                
+                {/* Prior code moved to Main....
+                <div><Main /></div>
+
                 <div className="container App-main">
 
                     <div className="row">
@@ -90,6 +51,13 @@ class App extends Component {
                     </div>
 
                 </div>
+                */}
+
+                <Switch>
+                    <Route exact path="/" component={Main} />
+                    <Route path="/wishlists" component={WishLists} />
+                    <Route path="/products" component={Products} />
+                </Switch>
             </div>
         );
     }
